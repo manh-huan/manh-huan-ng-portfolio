@@ -1,0 +1,40 @@
+<mat-toolbar color="primary" class="navigation-bar" id="navigation">
+    
+    <button mat-icon-button aria-label="Open menu" (click)="sidenav.toggle()" class="mobile-only">
+      <mat-icon>menu</mat-icon>
+    </button>
+  
+    
+    <button mat-icon-button aria-label="Toggle theme" (click)="toggleTheme.emit()">
+      <mat-icon>{{ isDark ? 'light_mode' : 'dark_mode' }}</mat-icon>
+    </button>
+  
+    <span class="spacer"></span>
+  
+    <!-- Menu desktop -->
+    <ng-container class="desktop-only">
+      <button
+        mat-button
+        *ngFor="let item of navItems"
+        (click)="scrollTo(item.id)"
+      >
+        {{ item.label }}
+      </button>
+    </ng-container>
+  </mat-toolbar>
+  
+  <!-- Drawer mobile -->
+  <mat-sidenav-container class="mobile-only">
+    <mat-sidenav #sidenav mode="over" [autoFocus]="false">
+      <mat-nav-list>
+        <button
+          mat-list-item
+          *ngFor="let item of navItems"
+          (click)="scrollTo(item.id); sidenav.close()"
+        >
+          {{ item.label }}
+        </button>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content></mat-sidenav-content>
+  </mat-sidenav-container>
