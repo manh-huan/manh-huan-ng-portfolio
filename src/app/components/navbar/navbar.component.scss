@@ -1,0 +1,138 @@
+/* src/app/navbar/navbar.component.scss */
+.navbar-fixed-top {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar-fixed-top.scrolled {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.35);
+  }
+  
+  .navigation-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0d1116;
+    padding: 8px 12px;
+  
+    svg {
+      cursor: pointer;
+    }
+  }
+  
+  /* Nút biểu tượng */
+  .icon-btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+    padding: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  
+  .link-btn {
+    color: #fff;
+    background: transparent;
+    border: none;
+    font-size: 1.3rem;
+    font: bold 14px/1.4 'Lato', arial, sans-serif;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 6px 10px;
+    cursor: pointer;
+  }
+  
+  .link-btn:hover {
+    color: #5000ca;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+  }
+  
+  /* Vùng link desktop */
+  .nav-links {
+    display: none;
+  }
+  
+  @media (min-width: 600px) {
+    .menu-button {
+      display: none;
+    }
+    .nav-links {
+      display: block;
+    }
+  }
+  
+  /* Drawer mobile */
+  .drawer-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+  }
+  
+  .drawer {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 240px;
+    height: 100%;
+    background: #fff;
+    color: #0d1116;
+    box-sizing: border-box;
+    padding: 12px;
+    transition: right .2s ease-in-out;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.25);
+  }
+  
+  .drawer.open {
+    right: 0;
+  }
+  
+  .mobile-menu-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+  
+    svg {
+      width: 1.1em;
+      height: 1.1em;
+    }
+  }
+  
+  .drawer-list {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0 0;
+  }
+  
+  .drawer-link {
+    width: 100%;
+    text-align: center;
+    background: transparent;
+    border: none;
+    color: #0d1116;
+    font-family: "Lato", sans-serif;
+    font-size: 1.05rem;
+    padding: 10px 0;
+    cursor: pointer;
+  }
+  
+  .drawer-link:hover {
+    color: #5000ca;
+  }
+  
+  :host-context(.light-mode) .navigation-bar {
+    background-color: #f8f9fa;
+  }
+  
+  :host-context(.light-mode) .icon-btn,
+  :host-context(.light-mode) .link-btn {
+    color: #0d1116;
+  }

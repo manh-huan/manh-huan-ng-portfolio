@@ -1,5 +1,5 @@
-<app-navbar (toggleTheme)="theme.toggle()"></app-navbar>
-<div class="main-container" [ngClass]="theme.isDark() ? 'dark-mode' : 'light-mode'">
+<app-navbar [mode]="mode" (modeChange)="toggleMode()"></app-navbar>
+<div class="main-container">
   <app-home></app-home>
   <app-skills id="expertise"></app-skills>
   <app-timeline [events]="timelineItems"></app-timeline>

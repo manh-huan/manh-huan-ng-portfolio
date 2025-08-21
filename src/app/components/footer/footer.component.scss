@@ -1,0 +1,22 @@
+footer {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: var(--bg);
+
+    div {
+        display: inline-flex;
+        gap: 12px;
+        align-items: center;
+    }
+
+    svg {
+        width: 1.2em !important;
+        height: 1.2em !important;
+        padding: 10px ;
+    }
+
+    p {
+        font-size: 0.8em;
+    }
+}

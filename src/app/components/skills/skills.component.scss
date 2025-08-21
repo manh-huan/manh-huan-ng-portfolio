@@ -1,11 +1,12 @@
 .skills-container {
-    padding: 0px 15%;
+    padding: 5% 10%;
     display: flex;
     flex-direction: column;
     text-align: left;
+    background-color: var(--bg);
   
     svg {
-      color: white; // Angular fa-icon renders to <svg>
+      color: var(--text); // Angular fa-icon renders to <svg>
     }
   }
   
@@ -20,16 +21,16 @@
     text-align: left;
   }
   
-  /* Angular Material Chip */
+
   .chip, .mat-mdc-chip {
-    color: rgb(39, 40, 34) !important;
-    background-color: white !important;
+    color: var(--text) !important;
+    background-color: var(--card) !important;
     font-size: 0.8rem !important;
     height: 25px !important;
   
     span {
       font-family: 'Courier Prime', monospace;
-      color: rgb(39, 40, 34);
+      color: var(--text);
     }
   
     svg {
@@ -42,12 +43,12 @@
     margin: 0.5em 0;
   
     .chip-title {
-      color: white;
+      color: var(--text);
       padding-right: 10px;
     }
   }
   
-  /* Angular Material chips spacing */
+
   .flex-chips .mat-mdc-chip {
     margin-right: 0.5em;
   }

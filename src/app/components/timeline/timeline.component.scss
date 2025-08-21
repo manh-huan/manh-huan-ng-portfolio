@@ -5,8 +5,13 @@
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    padding: 0px 15%;
-    min-height: 700px;
+    padding: 5% 10%;
+    min-height: 500px;
+    background-color: var(--bg);
+  }
+
+  .timeline h1 {
+    margin: 0% !important;
   }
 
   .timeline-line {
@@ -31,15 +36,15 @@
     top: 10px;
     width: 16px;
     height: 16px;
-    border: 2px solid #fff;
+    border: 2px solid var(--text);
     border-radius: 50%;
-    background: #5000ca;
+    background: var(--primary);
     box-shadow: 0 0 0 3px rgba(80, 0, 202, 0.25);
   }
 
   .timeline-card {
-    background: #fff;
-    color: rgb(39, 40, 34);
+    background: var(--card);
+    color: var(--text);
     border-radius: 8px;
     padding: 12px 16px;
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
@@ -50,7 +55,7 @@
     font-family: 'Courier Prime', monospace;
     font-weight: 600;
     margin-bottom: 4px;
-    color: #0d1116;
+    color: var(--text);
   }
 
   .timeline-title {

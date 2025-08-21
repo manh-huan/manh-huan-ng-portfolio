@@ -1,38 +1,56 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+// src/app/navbar/navbar.component.ts
+import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
+
+type UIMode = 'dark' | 'light';
+
+interface NavItem {
+  label: string;
+  sectionId: string;
+}
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [
-    CommonModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatListModule,
-  ],
+  imports: [CommonModule],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+  styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-  @Input() isDark = false;
-  @Output() toggleTheme = new EventEmitter<void>();
+  @Input() mode: UIMode = 'dark';
+  @Output() modeChange = new EventEmitter<void>();
 
-  navItems = [
-    { id: 'expertise', label: 'Skills' },
-    { id: 'history', label: 'Timeline' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'contact', label: 'Contact' },
+  mobileOpen = false;
+  scrolled = false;
+
+  readonly navItems: NavItem[] = [
+    { label: 'Expertise', sectionId: 'expertise' },
+    { label: 'History', sectionId: 'timeline' },
+    { label: 'Projects', sectionId: 'projects' },
+    { label: 'Contact', sectionId: 'contact' }
   ];
 
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
+    const navbar = document.getElementById('navigation');
+    this.scrolled = !!navbar && window.scrollY > navbar.clientHeight;
+  }
+
+  toggleMobile(): void {
+    this.mobileOpen = !this.mobileOpen;
+  }
+
+  onToggleMode(): void {
+    this.modeChange.emit();
+  }
+
   scrollTo(sectionId: string): void {
-    const element = document.getElementById(sectionId);
-    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const el = document.getElementById(sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+      this.mobileOpen = false;
+    } else {
+      console.error(`Element with id "${sectionId}" not found`);
+    }
   }
 }

@@ -1,40 +1,47 @@
-<mat-toolbar color="primary" class="navigation-bar" id="navigation">
-    
-    <button mat-icon-button aria-label="Open menu" (click)="sidenav.toggle()" class="mobile-only">
-      <mat-icon>menu</mat-icon>
-    </button>
-  
-    
-    <button mat-icon-button aria-label="Toggle theme" (click)="toggleTheme.emit()">
-      <mat-icon>{{ isDark ? 'light_mode' : 'dark_mode' }}</mat-icon>
-    </button>
-  
-    <span class="spacer"></span>
-  
-    <!-- Menu desktop -->
-    <ng-container class="desktop-only">
-      <button
-        mat-button
-        *ngFor="let item of navItems"
-        (click)="scrollTo(item.id)"
-      >
-        {{ item.label }}
+
+<nav id="navigation" class="navbar-fixed-top" [class.scrolled]="scrolled">
+    <div class="navigation-bar">
+      <button class="icon-btn menu-button" aria-label="Open menu" (click)="toggleMobile()">
+        <!-- Menu icon -->
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+        </svg>
       </button>
-    </ng-container>
-  </mat-toolbar>
   
-  <!-- Drawer mobile -->
-  <mat-sidenav-container class="mobile-only">
-    <mat-sidenav #sidenav mode="over" [autoFocus]="false">
-      <mat-nav-list>
-        <button
-          mat-list-item
-          *ngFor="let item of navItems"
-          (click)="scrollTo(item.id); sidenav.close()"
-        >
+      <button class="icon-btn" aria-label="Toggle theme" (click)="onToggleMode()">
+        <ng-container *ngIf="mode === 'dark'; else moonIcon">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M6.76 4.84l-1.8-1.79L3.17 4.84l1.79 1.8 1.8-1.8zM1 13h3v-2H1v2zm10 10h2v-3h-2v3zM4.84 20.83l1.8-1.79-1.8-1.8-1.79 1.8 1.79 1.79zM20 13h3v-2h-3v2zM17.24 4.84l1.8 1.8 1.79-1.8-1.79-1.79-1.8 1.79zM12 5a7 7 0 100 14 7 7 0 000-14z"/>
+          </svg>
+        </ng-container>
+        <ng-template #moonIcon>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+          </svg>
+        </ng-template>
+      </button>
+  
+      <div class="nav-links">
+        <button class="link-btn" *ngFor="let item of navItems" (click)="scrollTo(item.sectionId)">
           {{ item.label }}
         </button>
-      </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content></mat-sidenav-content>
-  </mat-sidenav-container>
+      </div>
+    </div>
+  
+    <!-- Drawer mobile -->
+    <div class="drawer-backdrop" *ngIf="mobileOpen" (click)="toggleMobile()"></div>
+    <aside class="navigation-bar-responsive drawer" [class.open]="mobileOpen" [attr.aria-hidden]="mobileOpen ? 'false' : 'true'">
+      <p class="mobile-menu-top">
+        <!-- List icon -->
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+        </svg>
+        Menu
+      </p>
+      <ul class="drawer-list">
+        <li *ngFor="let item of navItems">
+          <button class="drawer-link" (click)="scrollTo(item.sectionId)">{{ item.label }}</button>
+        </li>
+      </ul>
+    </aside>
+  </nav>

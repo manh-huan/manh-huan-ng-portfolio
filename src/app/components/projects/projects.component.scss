@@ -1,0 +1,89 @@
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    padding: 5% 10%;
+    text-align: left;
+    background-color: var(--bg);
+}
+  
+.projects-container .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px;
+}
+  
+.projects-container .projects-grid .project {
+    text-align: left;
+}
+  
+.project a h2 {
+    text-decoration: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+
+
+.project a:hover h2,
+.project a h2:hover {
+    text-decoration: underline;
+}
+
+/* Accessibility: keep underline when focused via keyboard */
+.project a:focus-visible h2,
+.project a h2:focus-visible {
+    text-decoration: underline;
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.project a,
+.project a h2 { 
+    color: #fff; }
+.project a,
+.project a:visited,
+.project a:hover,
+.project a:focus,
+.project a:active {
+    text-decoration: none;
+}
+
+
+
+:host-context(.light-mode) .project a,
+:host-context(.light-mode) .project a h2 {
+    color: #000;
+}
+
+.project a:visited { color: #fff; }
+:host-context(.light-mode) .project a:visited { color: #000; }
+  
+.zoom {
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+    object-fit: cover;
+    transition: transform .2s;
+    margin: 0 auto;
+}
+  
+.zoom:hover {
+    transform: scale(1.05);
+}
+
+
+@media screen {
+    @media (max-width: 700px) {
+        .projects-container {
+            display: block;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+  
+        .projects-container .projects-grid {
+            display: block;
+        }
+      
+        .projects-container .projects-grid .project {
+            padding-bottom: 5%;
+        }
+    }
+}

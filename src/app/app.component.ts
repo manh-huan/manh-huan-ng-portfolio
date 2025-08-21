@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Inject, Renderer2 } from '@angular/core';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { SkillsComponent } from './components/skills/skills.component';
@@ -28,6 +28,8 @@ import { TimelineItem } from './components/timeline/timeline.component';
 export class AppComponent {
   title = 'manh-huan-portfolio-ng';
 
+  constructor(@Inject(DOCUMENT) private doc: Document, private renderer: Renderer2) {}
+
   timelineItems: TimelineItem[] = [
     { 
       date: '2024 - Now', 
@@ -51,10 +53,13 @@ export class AppComponent {
       icon: 'pi pi-code'
     },
   ];
-
-  isDarkMode = false;
-  theme = {
-    isDark: () => this.isDarkMode,
-    toggle: () => (this.isDarkMode = !this.isDarkMode),
-  };
+  mode: 'dark' | 'light' = 'dark';
+  toggleMode(): void {
+    this.mode = this.mode === 'dark' ? 'light' : 'dark';
+    if (this.mode === 'light') {
+      this.renderer.addClass(this.doc.body, 'light-mode');
+    } else {
+      this.renderer.removeClass(this.doc.body, 'light-mode');
+    }
+  }
 }
