@@ -1,11 +1,15 @@
 {
   "name": "manh-huan-portfolio-ng",
   "version": "0.0.0",
+  "homepage": "https://manh-huan.github.io/manh-huan-ng-portfolio",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
+    "predeploy": "npm run build:prod",
+    "deploy": "npx angular-cli-ghpages --dir=dist/manh-huan-portfolio-ng/browser",
     "test": "ng test",
     "serve:ssr:manh-huan-portfolio-ng": "node dist/manh-huan-portfolio-ng/server/server.mjs"
   },
@@ -45,6 +49,7 @@
     "@types/express": "^4.17.17",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^18.18.0",
+    "angular-cli-ghpages": "^2.0.3",
     "jasmine-core": "~5.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
