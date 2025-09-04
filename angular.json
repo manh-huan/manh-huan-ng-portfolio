@@ -18,6 +18,7 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/manh-huan-portfolio-ng",
+            "baseHref": "/manh-huan-ng-portfolio/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
