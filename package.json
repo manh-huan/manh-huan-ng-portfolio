@@ -9,7 +9,7 @@
     "build:prod": "ng build --configuration production --base-href /manh-huan-ng-portfolio/ --deploy-url /manh-huan-ng-portfolio/",
     "watch": "ng build --watch --configuration development",
     "predeploy": "npm run build:prod",
-    "deploy": "npx angular-cli-ghpages --dir=dist/manh-huan-portfolio-ng/browser --base-href /manh-huan-ng-portfolio/",
+    "deploy": "npx angular-cli-ghpages --dir=dist/manh-huan-portfolio-ng/browser",
     "test": "ng test",
     "serve:ssr:manh-huan-portfolio-ng": "node dist/manh-huan-portfolio-ng/server/server.mjs"
   },
