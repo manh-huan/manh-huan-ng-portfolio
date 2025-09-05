@@ -22,39 +22,28 @@ export class SkillsComponent {
 
 
   labelsFirst = [
-    "React",
+    "Angular",
     "TypeScript",
     "JavaScript",
     "HTML5",
     "CSS3",
-    "SASS",
-    "Flask",
+    "Java",
+    "Spring Boot",
+    "Quarkus",
     "Python",
-    "SQL",
+    "ElasticSearch",
     "PostgreSQL",
     "Postman"
   ];
   
   labelsSecond = [
     "Git",
-    "GitHub Actions",
+    "Gitlab CI/CD",
+    "Jenkins",
     "Docker",
-    "AWS",
-    "Azure",
+    "Kubernetes",
     "Linux",
-    "Snowflake",
-    "Pandas",
-    "Selenium",
-  ];
-  
-  labelsThird = [
-    "OpenAI",
-    "Groq",
-    "LangChain",
-    "Qdrant",
-    "Hugging Face",
-    "LlamaIndex",
-    "Streamlit",
-  ];
-  
+    "Kibana",
+    "Grafana",
+  ];  
 }
