@@ -30,29 +30,30 @@ export class AppComponent {
 
   constructor(@Inject(DOCUMENT) private doc: Document, private renderer: Renderer2) {}
 
-  timelineItems: TimelineItem[] = [
-    { 
-      date: '2024 - Now', 
-      title: 'Full Stack Engineer', 
-      subtitle: 'Company A', 
-      description: 'Xây dựng web app, CI/CD...',
-      icon: 'pi pi-code'
-    },
-    { 
-      date: '2022 - 2024', 
-      title: 'Frontend Developer', 
-      subtitle: 'Company B', 
-      description: 'React, Angular...',
-      icon: 'pi pi-code'
-    },
-    { 
-      date: '2020 - 2022', 
-      title: 'Intern', 
-      subtitle: 'Company C', 
-      description: 'Học và làm dự án nội bộ.',
-      icon: 'pi pi-code'
-    },
-  ];
+timelineItems: TimelineItem[] = [
+  { 
+    date: '2024 - 2025', 
+    title: 'Java Developer', 
+    subtitle: 'Horizon Trading Solution, Rennes, France', 
+    description: 'Developing and maintaining Order Management System (OMS) components, market connectivity drivers (FIX protocol), and high-performance trading modules using Java, Swing, and multithreading.',
+    icon: 'pi pi-code'
+  },
+  { 
+    date: '2022 - 2024', 
+    title: 'Full Stack Developer (Java/Angular)', 
+    subtitle: 'Orange Business, Rennes, France', 
+    description: 'Designed and implemented features for project management apps. Built backend APIs with Quarkus, created CI/CD pipelines, and automated deployments with Docker and Kubernetes.',
+    icon: 'pi pi-code'
+  },
+  { 
+    date: '2022', 
+    title: 'Software Developer Intern', 
+    subtitle: 'FPT Software, Paris, France', 
+    description: 'Developed an e-commerce web application using Java Spring Boot and Angular. Gained experience in Agile/Scrum and real-world software delivery.',
+    icon: 'pi pi-code'
+  }
+];
+
   mode: 'dark' | 'light' = 'dark';
   toggleMode(): void {
     this.mode = this.mode === 'dark' ? 'light' : 'dark';
