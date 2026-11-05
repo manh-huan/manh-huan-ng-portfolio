@@ -1,59 +1,69 @@
+/* Ported from react-portfolio-template Expertise.scss (Yuji Sato, MIT) */
+
+:host {
+  display: block;
+}
+
 .skills-container {
-    padding: 5% 10%;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    background-color: var(--bg);
-  
-    svg {
-      color: var(--text); // Angular fa-icon renders to <svg>
-    }
+  padding: 5% 10%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+
+  fa-icon {
+    color: var(--text);
   }
-  
+
+  h1 {
+    margin-top: 0;
+  }
+}
+
+.skills-container .skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+}
+
+.skills-container .skills-grid .skill {
+  align-items: center;
+  text-align: left;
+}
+
+.chip {
+  display: inline-block;
+  color: var(--card-text);
+  background-color: var(--card);
+  font-size: 0.8rem;
+  height: 25px;
+  line-height: 25px;
+  padding: 0 10px;
+  border-radius: 12.5px;
+  margin-right: 0.5em;
+  font-family: "Courier Prime", monospace;
+}
+
+.flex-chips {
+  line-height: 2;
+
+  .chip-title {
+    color: var(--text);
+    padding-right: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .skills-container {
+    display: block;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
   .skills-container .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 100px;
+    display: initial;
   }
-  
+
   .skills-container .skills-grid .skill {
-    align-items: center;
-    text-align: left;
+    padding-bottom: 5%;
   }
-  
-
-  .chip, .mat-mdc-chip {
-    color: var(--text) !important;
-    background-color: var(--card) !important;
-    font-size: 0.8rem !important;
-    height: 25px !important;
-  
-    span {
-      font-family: 'Courier Prime', monospace;
-      color: var(--text);
-    }
-  
-    svg {
-      height: 15px !important;
-    }
-  }
-  
-  .flex-chips {
-    line-height: 2;
-    margin: 0.5em 0;
-  
-    .chip-title {
-      color: var(--text);
-      padding-right: 10px;
-    }
-  }
-  
-
-  .flex-chips .mat-mdc-chip {
-    margin-right: 0.5em;
-  }
-  
-  .flex-chips .mat-mdc-chip.mat-mdc-chip-outline {
-    background-color: #e0e0e0;
-    font-family: source-code-pro, Menlo, Mo
-  }
+}

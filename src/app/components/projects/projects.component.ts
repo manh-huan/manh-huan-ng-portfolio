@@ -24,15 +24,15 @@ export class ProjectsComponent {
       title: 'CompDoc - Academic Report Analyzer',
       href: 'https://github.com/rchacons/academic-report-analyzer',
       imgSrc: '/manh-huan-ng-portfolio/assets/images/mock03.png',
-      alt: 'thumbnail',
+      alt: 'CompDoc interface for analyzing and comparing academic reports',
       description:
-        'A platform with FastAPI Backend and React Frontend that analyzes, compare and extract academic report.'
+        'A platform with FastAPI Backend and React Frontend that analyzes, compares and extracts academic reports.'
     },
     {
       title: 'Java Banking App',
       href: 'https://github.com/manh-huan/mahu-java-banking-app',
       imgSrc: '/manh-huan-ng-portfolio/assets/images/mock02.png',
-      alt: 'thumbnail',
+      alt: 'Java Banking App dashboard for accounts and transactions',
       description: 'A simple banking application built with Java FX which provides a user-friendly interface for managing accounts, transactions, and dashboards.'
       },
   ];

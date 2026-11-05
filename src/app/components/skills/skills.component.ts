@@ -1,24 +1,21 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faAngular, faDocker, faPython } from '@fortawesome/free-brands-svg-icons';
-import { MatChipsModule } from '@angular/material/chips'; 
+import { faAngular, faDocker } from '@fortawesome/free-brands-svg-icons';
+import { faRobot } from '@fortawesome/free-solid-svg-icons';
 
 
 
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [FontAwesomeModule, 
-            CommonModule,  
-            MatChipsModule ],
+  imports: [FontAwesomeModule],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
   faDocker = faDocker;
   faAngular = faAngular;
-  faPython = faPython;
+  faRobot = faRobot;
 
 
   labelsFirst = [
@@ -33,6 +30,7 @@ export class SkillsComponent {
     "Python",
     "ElasticSearch",
     "PostgreSQL",
+    "Redis",
     "Postman"
   ];
   
@@ -42,8 +40,17 @@ export class SkillsComponent {
     "Jenkins",
     "Docker",
     "Kubernetes",
+    "AWS",
     "Linux",
     "Kibana",
     "Grafana",
-  ];  
+  ];
+
+  labelsThird = [
+    "Claude API",
+    "Prompt Engineering",
+    "Tool Use",
+    "MCP",
+    "Agents",
+  ];
 }

@@ -1,26 +1,22 @@
-
-<div class="timeline" id="timeline">
+<div id="history">
+  <div class="items-container">
     <h1>Career History</h1>
-    <p-timeline [value]="events" align="alternate" class="customized-timeline">
-        <ng-template #marker let-event>
-            <span
-            class="inline-flex items-center justify-center text-white rounded-full z-10 shadow-sm"
-            [style.background-color]="'#5000ca'"
-            [style.border-radius]="'50%'"
-            [style.padding]="'0.5em'"
-          >
-            <i [class]="event.icon" [style.color]="'white'" ></i>
-          </span>
-        </ng-template>
-        <ng-template #content let-event>
-            <div class="timeline-card">
-                <span class="timeline-date">{{ event.date }}</span>
-                <h3 class="timeline-title">{{ event.title }}</h3>
-                <h4 class="timeline-subtitle" *ngIf="event.subtitle">{{ event.subtitle }}</h4>
-                <p class="timeline-desc" *ngIf="event.description">{{ event.description }}</p>
-            </div>
-        </ng-template>
-    </p-timeline>
-    
+    <div class="vertical-timeline" #timeline>
+      @for (event of events; track event.title; let i = $index) {
+        <div class="vt-element" [class.vt-left]="i % 2 === 0">
+          <div class="vt-date">{{ event.date }}</div>
+          <span class="vt-icon"><fa-icon [icon]="faBriefcase"></fa-icon></span>
+          <div class="vt-card">
+            <h3 class="vt-title">{{ event.title }}</h3>
+            @if (event.subtitle) {
+              <h4 class="vt-subtitle">{{ event.subtitle }}</h4>
+            }
+            @if (event.description) {
+              <p class="vt-desc">{{ event.description }}</p>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
 </div>
-

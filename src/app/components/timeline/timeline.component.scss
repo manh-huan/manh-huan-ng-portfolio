@@ -1,115 +1,206 @@
-/* src/app/components/timeline/timeline.component.scss */
-.timeline {
-    display: flex-row;
-    gap: 30px;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    padding: 5% 10%;
-    min-height: 500px;
-    background-color: var(--bg);
+/* Alternating vertical timeline, ported from react-vertical-timeline-component
+   as rendered by react-portfolio-template (Yuji Sato, MIT) */
+
+:host {
+  display: block;
+}
+
+#history {
+  h1 {
+    margin-top: 0;
+  }
+}
+
+.vertical-timeline {
+  position: relative;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 2em 0;
+}
+
+.vertical-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: 4px;
+  background: var(--text);
+  opacity: 0.5;
+  border-radius: 2px;
+}
+
+.vt-element {
+  position: relative;
+  margin: 2em 0;
+}
+
+.vt-card {
+  position: relative;
+  width: calc(50% - 50px);
+  background: var(--card);
+  color: var(--card-text);
+  border-radius: 2px;
+  padding: 1em 1.5em;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+
+  .vt-title {
+    color: var(--card-text);
+    font-size: 1.3em;
+    font-weight: 700;
+    margin: 0 0 0.4em;
   }
 
-  .timeline h1 {
-    margin: 0% !important;
+  .vt-subtitle {
+    color: var(--card-text);
+    opacity: 0.75;
+    font-size: 1em;
+    font-weight: 400;
+    margin: 0 0 0.6em;
   }
 
-  .timeline-line {
-    position: absolute;
-    left: 32px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: rgba(255, 255, 255, 0.3);
-  }
-
-  .timeline-item {
-    position: relative;
-    display: flex;
-    margin-bottom: 24px;
-    padding-left: 64px;
-  }
-
-  .timeline-dot {
-    position: absolute;
-    left: 24px;
-    top: 10px;
-    width: 16px;
-    height: 16px;
-    border: 2px solid var(--text);
-    border-radius: 50%;
-    background: var(--primary);
-    box-shadow: 0 0 0 3px rgba(80, 0, 202, 0.25);
-  }
-
-  .timeline-card {
-    background: var(--card);
-    color: var(--text);
-    border-radius: 8px;
-    padding: 12px 16px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-  }
-
-  .timeline-date {
-    display: inline-block;
-    font-family: 'Courier Prime', monospace;
-    font-weight: 600;
-    margin-bottom: 4px;
-    color: var(--text);
-  }
-
-  .timeline-title {
-    margin: 4px 0 0;
-  }
-
-  .timeline-subtitle {
-    margin: 2px 0 8px;
-    font-weight: 500;
-    opacity: 0.9;
-  }
-
-  .timeline-desc {
+  .vt-desc {
+    color: var(--card-text);
+    font-size: 0.9em;
     margin: 0;
   }
+}
 
-  @media (max-width: 768px) {
-    .timeline-line { left: 20px; }
-    .timeline-item { padding-left: 52px; }
-    .timeline-dot { left: 12px; }
+/* Arrow pointing from card to the center line */
+.vt-element.vt-left .vt-card {
+  margin-right: auto;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 24px;
+    right: -7px;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 7px solid var(--card);
+  }
+}
+
+.vt-element:not(.vt-left) .vt-card {
+  margin-left: calc(50% + 50px);
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: -7px;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-right: 7px solid var(--card);
+  }
+}
+
+.vt-icon {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #5000ca;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 4px var(--bg);
+  z-index: 2;
+}
+
+.vt-date {
+  position: absolute;
+  top: 24px;
+  color: var(--muted);
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.95em;
+}
+
+.vt-element.vt-left .vt-date {
+  left: calc(50% + 35px);
+}
+
+.vt-element:not(.vt-left) .vt-date {
+  right: calc(50% + 35px);
+}
+
+/* Scroll reveal: bounce-in like the reference library.
+   The hidden state exists only when JS has flagged the host (.vt-reveal),
+   so SSR and no-JS visitors always see the cards. */
+:host(.vt-reveal) .vt-card {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.4s ease-in, transform 0.55s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+:host(.vt-reveal) .vt-icon {
+  opacity: 0;
+  transform: translateX(-50%) translateY(24px) scale(0.6);
+  transition: opacity 0.4s ease-in, transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.vt-element.in-view .vt-card {
+  opacity: 1;
+  transform: none;
+}
+
+.vt-element.in-view .vt-icon {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+/* Mobile: single column, line at the left, date inside flow */
+@media screen and (max-width: 1170px) {
+  .vertical-timeline::before {
+    left: 20px;
+    transform: none;
   }
 
-  /* Hòa hợp với dark-mode nền tối */
-  .dark-mode .timeline-line { background: rgba(255,255,255,0.25); }
-  .light-mode .timeline-line { background: rgba(0,0,0,0.08); }
-
-  /* Border màu phù hợp từng mode để dễ thấy khi kiểm tra hiển thị */
-  .dark-mode .timeline { border-color: rgba(255,255,255,0.4); }
-  .light-mode .timeline { border-color: rgba(0,0,0,0.35); }
-
-  /* PrimeNG Icons */
-  .pi {
-    font-family: "PrimeIcons" !important;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  :host(.vt-reveal) .vt-icon {
+    left: 20px;
+    transform: translateX(-50%) translateY(24px) scale(0.6);
   }
 
-  /* Customized timeline styles */
-  .customized-timeline {
-    .p-timeline-event-marker {
-      border: 2px solid var(--primary-color, #3B82F6);
-      border-radius: 50%;
-      width: 2rem;
-      height: 2rem;
-      background-color: var(--primary-color, #3B82F6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+  .vt-icon {
+    left: 20px;
   }
-  
 
+  .vt-element.in-view .vt-icon {
+    transform: translateX(-50%) scale(1);
+  }
+
+  .vt-card,
+  .vt-element:not(.vt-left) .vt-card,
+  .vt-element.vt-left .vt-card {
+    width: auto;
+    margin: 0 0 0 56px;
+  }
+
+  .vt-card::after,
+  .vt-element:not(.vt-left) .vt-card::after,
+  .vt-element.vt-left .vt-card::after {
+    content: none;
+  }
+
+  .vt-date {
+    position: static;
+    display: block;
+    margin: 0 0 0.4em 56px;
+    color: var(--card-text);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vt-card,
+  .vt-icon,
+  .vt-element.in-view .vt-card,
+  .vt-element.in-view .vt-icon {
+    transition: none;
+  }
+}

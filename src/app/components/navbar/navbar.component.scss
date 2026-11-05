@@ -13,44 +13,43 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #0d1116;
+    background-color: var(--bg-alt);
     padding: 8px 12px;
-  
+
     svg {
       cursor: pointer;
     }
   }
-  
-  /* Nút biểu tượng */
+
+  /* Icon buttons (theme toggle, menu) */
   .icon-btn {
     background: transparent;
     border: none;
-    color: #fff;
+    color: var(--text);
     padding: 6px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-  
+
     svg {
       width: 24px;
       height: 24px;
     }
   }
-  
+
   .link-btn {
-    color: #fff;
+    color: var(--text);
     background: transparent;
     border: none;
-    font-size: 1.3rem;
-    font: bold 14px/1.4 'Lato', arial, sans-serif;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
+    font-family: 'Lato', arial, sans-serif;
+    font-size: 1.1rem;
+    text-transform: initial;
     padding: 6px 10px;
     cursor: pointer;
   }
-  
+
   .link-btn:hover {
-    color: #5000ca;
+    color: var(--accent-text);
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
   }
   
@@ -126,13 +125,4 @@
   
   .drawer-link:hover {
     color: #5000ca;
-  }
-  
-  :host-context(.light-mode) .navigation-bar {
-    background-color: #f8f9fa;
-  }
-  
-  :host-context(.light-mode) .icon-btn,
-  :host-context(.light-mode) .link-btn {
-    color: #0d1116;
   }

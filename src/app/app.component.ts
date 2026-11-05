@@ -28,10 +28,23 @@ import { TimelineItem } from './components/timeline/timeline.component';
 export class AppComponent {
   title = 'manh-huan-portfolio-ng';
 
-  constructor(@Inject(DOCUMENT) private doc: Document, private renderer: Renderer2) {}
+  constructor(@Inject(DOCUMENT) private doc: Document, private renderer: Renderer2) {
+    // Deep-linkable theme: ?theme=light
+    const search = this.doc.defaultView?.location.search ?? '';
+    if (new URLSearchParams(search).get('theme') === 'light') {
+      this.mode = 'light';
+      this.renderer.addClass(this.doc.body, 'light-mode');
+    }
+  }
 
 timelineItems: TimelineItem[] = [
-  { 
+  {
+    date: '2026 - Present',
+    title: 'Java Backend Developer',
+    subtitle: 'Stellantis Financial Services · via SFEIR, Strasbourg, France',
+    description: 'Modernizing the financial quotation platform toward a microservices architecture while ensuring production stability: enhanced financial calculation services for European financing quotations (payment schedules, residual values, taxation), designed a Spring Boot eligibility microservice from scratch with REST APIs and Redis caching, and hardened batch imports with AWS S3.'
+  },
+  {
     date: '2024 - 2025', 
     title: 'Java Developer', 
     subtitle: 'Horizon Trading Solution, Rennes, France', 
@@ -55,6 +68,7 @@ timelineItems: TimelineItem[] = [
 ];
 
   mode: 'dark' | 'light' = 'dark';
+
   toggleMode(): void {
     this.mode = this.mode === 'dark' ? 'light' : 'dark';
     if (this.mode === 'light') {

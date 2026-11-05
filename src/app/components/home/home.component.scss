@@ -1,171 +1,106 @@
+/* Ported from react-portfolio-template Main.scss (Yuji Sato, MIT) */
+
+:host {
+  display: block;
+}
 
 .about-section {
-    display: flex;
-    gap: 30px;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    padding: 0px 15%;
-    min-height: 600px;
-    background-image: var(--home-bg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
+  display: flex;
+  gap: 30px;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 0px 15%;
+  min-height: 700px;
+  background-image: var(--home-bg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .about-section .content {
-    text-align: left;
-    z-index: 2;
+  text-align: left;
+  z-index: 2;
 
-    .social_icons {
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-        color: var(--text);
+  .social_icons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    color: var(--text);
 
-        i { font-size: 1.8em; }
+    a {
+      color: var(--text);
     }
 
-    .mobile_social_icons {
-        display: none;
+    svg {
+      font-size: 1.8em;
     }
+  }
 
-    p {
-        font-size: 1.5em;
-        margin-block-start: 0px;
-        margin-block-end: 0px;
-    }
+  .mobile_social_icons {
+    display: none;
+  }
 
-    h1 {
-        font-size: 3em;
-        margin-block-start: 0px;
-        margin-block-end: 0px;
-    }
+  p {
+    font-size: 1.5em;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+  }
+
+  h1 {
+    font-size: 5em;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    font-weight: 700;
+  }
 }
 
 .about-section .image-wrapper {
-    z-index: 2;
-    img {
-        width: 150px;
-        border-radius: 50%;
-    }
+  z-index: 2;
+
+  img {
+    width: 150px;
+    border-radius: 50%;
+  }
 }
 
-.about p {
+@media screen and (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5%;
+    min-height: 700px;
     text-align: center;
-    padding-top: 30%;
-    padding-bottom: 30%;
-}
+  }
 
+  .about-section h1 {
+    font-size: 4em !important;
+    text-align: center;
+  }
 
-.about-section .content .social_icons {
-    color: var(--text) !important;
-}
+  .about-section p {
+    text-align: center;
+  }
 
-.about-section .content .social_icons fa-icon,
-.about-section .content .social_icons svg {
-    color: var(--text) !important;
-}
-
-.about-section .content .mobile_social_icons {
-    color: var(--text) !important;
-}
-
-.about-section .content .mobile_social_icons fa-icon,
-.about-section .content .mobile_social_icons svg {
-    color: var(--text) !important;
-}
-
-.light-mode .nav-right li {
-    color: var(--text) !important;
-}
-
-@media screen {
-    @media (max-width: 567px) {
-        .nav-left{
-            padding-top: 20px;
-            float:left;
-        }
-
-        .nav-left img {
-            height: 35px
-        }
-
-        .nav-right {
-            float:right;
-        }
-
-        .nav-right li {
-            padding: 10px 15px;
-            list-style:none;
-            font-size:13px;
-            color:white;
-            width: 10%;
-        }
-
-        .nav-right ul {
-            list-style-type: none;
-            margin: 0px;
-            padding: 0px;
-        }
-
-        body {
-            width: 100%;
-        }
-
-        .about {
-            padding-left: 5%;
-            padding-right: 5%;
-            font-size: 12px;
-        }
+  .about-section .content {
+    .social_icons {
+      display: none !important;
     }
 
-    @media (max-width:768px) {
-        .about-section h1 {
-            font-size: 4em !important;
-            text-align: left;
-        }
+    .mobile_social_icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
 
-        .about-section p {
-            text-align: left;
-        }
+      a {
+        color: var(--text);
+      }
 
-        .container {
-            display: initial;
-        }
-
-        .social_icons {
-            display: none !important;
-        }
-
-        .mobile_social_icons {
-            padding-top: 10px;
-            display: flex !important;
-            flex-direction: row;
-            gap: 10px;
-            color: var(--text) !important;
-    
-            i { font-size: 1.8em; }
-        }
-
-        .about-section {
-            padding-top: 150px;
-            display: block;
-            padding-left: 0px;
-            padding-right: 0px;
-        }
-
-        .about-section .content {
-            width: 90%;
-            padding-left: 5%;
-            padding-right: 5%;
-            padding-bottom: 5%;
-        }
-
-        .about-section .image-wrapper {
-            padding-left: 5%;
-            width: 100%;
-        }
+      svg {
+        font-size: 1.8em;
+      }
     }
+  }
 }

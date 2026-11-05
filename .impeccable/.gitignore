@@ -1,0 +1,8 @@
+# Impeccable runtime artifacts — session-local, not project truth
+questions/
+mocks/
+review/
+catalog/
+payload.json
+surface-brief.md
+hook.cache.json

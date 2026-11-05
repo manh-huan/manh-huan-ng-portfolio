@@ -25,7 +25,7 @@ export class NavbarComponent {
 
   readonly navItems: NavItem[] = [
     { label: 'Expertise', sectionId: 'expertise' },
-    { label: 'History', sectionId: 'timeline' },
+    { label: 'History', sectionId: 'history' },
     { label: 'Projects', sectionId: 'projects' },
     { label: 'Contact', sectionId: 'contact' }
   ];
