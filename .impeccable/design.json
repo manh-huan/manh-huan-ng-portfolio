@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-05T00:00:00Z",
+  "title": "Design System: Manh-Huan Nguyen Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "ground-dark": {
+        "role": "neutral",
+        "displayName": "Ink Black Ground",
+        "canonical": "#0d1116",
+        "tonalRamp": ["#05070a", "#0d1116", "#161b22", "#20262e", "#2d333b", "#444c56", "#8b949e", "#c9d1d9"]
+      },
+      "ground-light": {
+        "role": "neutral",
+        "displayName": "Pale Gray Ground",
+        "canonical": "#f8f9fa",
+        "tonalRamp": ["#495057", "#6c757d", "#8f969d", "#adb5bd", "#ced4da", "#dee2e6", "#e9ecef", "#f8f9fa"]
+      },
+      "text-dark-mode": {
+        "role": "neutral",
+        "displayName": "Pure White Text",
+        "canonical": "#ffffff",
+        "tonalRamp": ["#a8afb6", "#c1c7cd", "#d4d9de", "#e4e8ec", "#f0f2f5", "#f7f8f9", "#fbfcfc", "#ffffff"]
+      },
+      "text-light-mode": {
+        "role": "neutral",
+        "displayName": "Ink Text (Light Mode)",
+        "canonical": "#0d1116",
+        "tonalRamp": ["#05070a", "#0d1116", "#21262d", "#3d444d", "#6e7681", "#8b949e", "#c9d1d9", "#f8f9fa"]
+      },
+      "muted-dark": {
+        "role": "neutral",
+        "displayName": "Blue-Gray Muted",
+        "canonical": "#c9d1d9",
+        "tonalRamp": ["#2d333b", "#444c56", "#6e7681", "#8b949e", "#adb5bd", "#c9d1d9", "#e2e6ea", "#f4f6f8"]
+      },
+      "muted-light": {
+        "role": "neutral",
+        "displayName": "Slate Muted",
+        "canonical": "#495057",
+        "tonalRamp": ["#12161a", "#212529", "#343a40", "#495057", "#6c757d", "#93999f", "#c0c4c8", "#e9ecef"]
+      },
+      "accent-violet": {
+        "role": "primary",
+        "displayName": "Electric Violet",
+        "canonical": "#5000ca",
+        "tonalRamp": ["#17063a", "#2a0a63", "#3c0d8c", "#5000ca", "#6a2de0", "#8f6ff0", "#b8a2f7", "#e6dbfd"]
+      },
+      "accent-text-dark": {
+        "role": "primary",
+        "displayName": "Soft Violet Text",
+        "canonical": "#8f6ff0",
+        "tonalRamp": ["#2c1a5e", "#442d8a", "#5e46b6", "#7557d0", "#8f6ff0", "#ab95f5", "#cbbaf9", "#ebe4fd"]
+      },
+      "card-surface": {
+        "role": "neutral",
+        "displayName": "Card White",
+        "canonical": "#ffffff",
+        "tonalRamp": ["#ced4da", "#dee2e6", "#e9ecef", "#f1f3f5", "#f8f9fa", "#fbfcfc", "#fdfdfe", "#ffffff"]
+      },
+      "card-ink": {
+        "role": "neutral",
+        "displayName": "Card Ink",
+        "canonical": "rgb(39, 40, 34)",
+        "tonalRamp": ["#0c0d09", "#1a1b14", "#272822", "#45463d", "#6b6c60", "#98998c", "#c5c6bd", "#e8e9e3"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero name only, 5em (4em mobile), Lato 700, margins zeroed." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles (Expertise, History, Projects, Contact), browser-default h1." },
+      "title": { "displayName": "Title", "purpose": "Timeline card titles and skill card h3 headings." },
+      "lede": { "displayName": "Lede", "purpose": "Hero role line (1.5em) and contact intro (1.2em)." },
+      "body": { "displayName": "Body", "purpose": "All UI prose at an enlarged 1.1rem root size." },
+      "label-mono": { "displayName": "Label Mono", "purpose": "Chips, timeline dates, GitHub/LinkedIn handles — machine-readable strings only." }
+    },
+    "shadows": [
+      { "name": "card-rest", "value": "0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12)", "purpose": "MDC elevation on white cards (timeline, contact items, contact buttons); constant, does not change on hover." },
+      { "name": "navbar-scrolled", "value": "0 2px 10px rgba(0,0,0,0.35)", "purpose": "Appears on the sticky navbar once the page scrolls." },
+      { "name": "drawer-edge", "value": "-2px 0 10px rgba(0,0,0,0.25)", "purpose": "Left edge of the open mobile navigation drawer." },
+      { "name": "dot-cutout-ring", "value": "0 0 0 4px var(--bg, #0d1116)", "purpose": "Ground-colored ring on 44px timeline dots so the spine passes behind them." }
+    ],
+    "motion": [
+      { "name": "state-transition", "value": "color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out", "purpose": "The single transition used for all hover/state changes." },
+      { "name": "app-fade-in", "value": "app-fade-in 700ms ease-out both (opacity 0 to 1, translateY 20px to none)", "purpose": "One-time app-level entrance on load, wrapping all sections." },
+      { "name": "reveal-card", "value": "opacity 0.4s ease-in, transform 0.55s cubic-bezier(0.25, 0.8, 0.25, 1) from translateY(24px)", "purpose": "Timeline card scroll reveal; hidden state gated behind the JS-added .vt-reveal class so SSR/no-JS always sees cards." },
+      { "name": "reveal-dot-bounce", "value": "transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) from translateY(24px) scale(0.6)", "purpose": "Timeline dot overshoot bounce on scroll reveal." },
+      { "name": "image-zoom", "value": "transform 0.2s to scale(1.05)", "purpose": "Project screenshot hover zoom." },
+      { "name": "drawer-slide", "value": "right 0.2s ease-in-out", "purpose": "Mobile drawer slide-in from -260px." },
+      { "name": "reduced-motion-clamp", "value": "animation-duration: 0.01ms !important; transition-duration: 0.01ms !important", "purpose": "Global prefers-reduced-motion clamp; scroll-behavior reverts to auto and reveal transitions are removed." }
+    ],
+    "breakpoints": [
+      { "name": "nav", "value": "600px" },
+      { "name": "projects", "value": "700px" },
+      { "name": "main", "value": "768px" },
+      { "name": "timeline", "value": "1170px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Static white pill for tech-stack labels; Courier Prime, never interactive.",
+      "html": "<span class=\"ds-chip\">Angular</span> <span class=\"ds-chip\">Spring Boot</span>",
+      "css": ".ds-chip { display: inline-block; background: var(--card, #ffffff); color: var(--card-text, rgb(39,40,34)); font-family: 'Courier Prime', monospace; font-size: 0.8rem; height: 25px; line-height: 25px; padding: 0 10px; border-radius: 12.5px; margin-right: 0.5em; }"
+    },
+    {
+      "name": "Timeline Card",
+      "kind": "card",
+      "refersTo": "timeline-card",
+      "description": "White career card alternating either side of the spine, MDC shadow at rest.",
+      "html": "<div class=\"ds-vt-card\"><h3 class=\"ds-vt-title\">Java Developer</h3><p class=\"ds-vt-subtitle\">Horizon Trading Solution, Rennes, France</p><p class=\"ds-vt-desc\">Order Management System components, FIX connectivity, multithreaded trading modules.</p></div>",
+      "css": ".ds-vt-card { background: var(--card, #ffffff); color: var(--card-text, rgb(39,40,34)); border-radius: 2px; padding: 1em 1.5em; box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12); max-width: 420px; } .ds-vt-title { color: inherit; font-family: 'Lato', sans-serif; font-size: 1.3em; font-weight: 700; margin: 0 0 0.4em; } .ds-vt-subtitle { color: inherit; opacity: 0.75; font-size: 1em; margin: 0 0 0.6em; } .ds-vt-desc { font-size: 0.9em; margin: 0; }"
+    },
+    {
+      "name": "Timeline Dot",
+      "kind": "custom",
+      "refersTo": "timeline-dot",
+      "description": "44px violet circle on the spine with a ground-colored cutout ring.",
+      "html": "<div class=\"ds-vt-icon\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 384 512\" fill=\"#ffffff\" aria-hidden=\"true\"><path d=\"M320 336c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V192h256v144zM64 96c0-17.7 14.3-32 32-32h48V32c0-17.7 14.3-32 32-32s32 14.3 32 32v32h48c17.7 0 32 14.3 32 32v64H64V96zM320 32c17.7 0 32 14.3 32 32v32h-64V64c0-17.7 14.3-32 32-32z\"/></svg></div>",
+      "css": ".ds-vt-icon { width: 44px; height: 44px; border-radius: 50%; background: #5000ca; color: #ffffff; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 0 0 4px var(--bg, #0d1116); }"
+    },
+    {
+      "name": "Contact Item",
+      "kind": "card",
+      "refersTo": "contact-item",
+      "description": "White link row (icon + bold label + mono value) that fills violet on hover; static variant keeps white.",
+      "html": "<a class=\"ds-contact-item\" href=\"#\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 496 512\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.4-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3-.3 2.9.9 3.9 1.3 1 2.9.7 3.6-.3.7-1.3.3-2.9-.9-3.9-1.2-.9-2.9-.7-3.6.3zm32.4 35.6c-1.6 1.3-2 3.9-.7 5.9 1.2 2 3.6 2.6 5.2 1.3 1.6-1.3 2-3.9.7-5.9-1.2-2-3.9-2.6-5.2-1.3zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.6 1.6 2 4.3 2.6 5.6 1.6 1.6-1.3 1.6-3.9 0-5.9-1.5-2-4.2-2.6-5.6-1.3z\"/></svg><span class=\"ds-contact-label\">GitHub</span><span class=\"ds-contact-value\">github.com/manh-huan</span></a>",
+      "css": ".ds-contact-item { display: flex; align-items: center; gap: 15px; background: var(--card, #ffffff); color: var(--card-text, rgb(39,40,34)); border-radius: 2px; padding: 14px 20px; text-decoration: none; box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12); transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out; } .ds-contact-item svg { color: inherit; min-width: 24px; } .ds-contact-item .ds-contact-label { font-family: 'Lato', sans-serif; font-weight: 700; min-width: 90px; } .ds-contact-item .ds-contact-value { font-family: 'Courier Prime', monospace; opacity: 0.85; } .ds-contact-item:hover { background-color: #5000ca; color: #ffffff; } .ds-contact-item:focus-visible { outline: 2px solid #5000ca; outline-offset: 2px; }"
+    },
+    {
+      "name": "Contact Button",
+      "kind": "button",
+      "refersTo": "contact-button",
+      "description": "Link-styled action button: white card surface, violet fill on hover.",
+      "html": "<a class=\"ds-contact-button\" href=\"#\">See my work on GitHub <svg width=\"14\" height=\"14\" viewBox=\"0 0 448 512\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M288 32c-17.7 0-32 14.3-32 32s14.3 32 32 32h50.7L169.4 262.6c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L384 138.7V189c0 17.7 14.3 32 32 32s32-14.3 32-32V64c0-17.7-14.3-32-32-32H288zM64 96c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H352c35.3 0 64-28.7 64-64V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v128H64V160h128c17.7 0 32-14.3 32-32s-14.3-32-32-32H64z\"/></svg></a>",
+      "css": ".ds-contact-button { display: inline-flex; align-items: center; gap: 10px; background-color: var(--card, #ffffff); color: var(--card-text, rgb(39,40,34)); padding: 12px 24px; border: none; border-radius: 2px; font-family: 'Lato', sans-serif; font-size: 1rem; text-decoration: none; box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12); transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out; } .ds-contact-button:hover { background-color: #5000ca; color: #ffffff; } .ds-contact-button:focus-visible { outline: 2px solid #5000ca; outline-offset: 2px; }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Transparent top-bar text link; hover to soft violet (dark) or electric violet (light).",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"#expertise\">Expertise</a><a class=\"ds-nav-link\" href=\"#projects\">Projects</a><a class=\"ds-nav-link\" href=\"#contact\">Contact</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 8px; background: var(--bg-alt, #0d1116); padding: 8px 12px; } .ds-nav-link { color: var(--text, #ffffff); background: transparent; border: none; font-family: 'Lato', arial, sans-serif; font-size: 1.1rem; padding: 6px 10px; text-decoration: none; cursor: pointer; transition: color 0.15s ease-in-out; } .ds-nav-link:hover { color: var(--accent-text, #8f6ff0); } .ds-nav-link:focus-visible { outline: 2px solid var(--accent, #5000ca); outline-offset: 2px; }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "project-image",
+      "description": "Screenshot link that zooms to 1.05 on hover, with an underlining title beneath.",
+      "html": "<div class=\"ds-project\"><a href=\"#\" class=\"ds-project-link\"><div class=\"ds-project-thumb\"></div><h2 class=\"ds-project-title\">CompDoc — academic report analyzer</h2></a></div>",
+      "css": ".ds-project { text-align: left; } .ds-project-link { text-decoration: none; } .ds-project-thumb { width: 100%; height: 160px; border-radius: 5px; background: #20262e; transition: transform 0.2s; } .ds-project-link:hover .ds-project-thumb { transform: scale(1.05); } .ds-project-title { color: #ffffff; font-family: 'Lato', sans-serif; font-size: 1.5em; margin: 0.5em 0 0.3em; text-decoration: none; } .ds-project-link:hover .ds-project-title { text-decoration: underline; } .ds-project-link:focus-visible { outline: 2px solid #5000ca; outline-offset: 2px; }"
+    },
+    {
+      "name": "Hero",
+      "kind": "custom",
+      "refersTo": "display",
+      "description": "Round photo beside social icons, 5em name and 1.5em role over the fixed-attachment ground.",
+      "html": "<div class=\"ds-hero\"><div class=\"ds-hero-photo\"></div><div class=\"ds-hero-content\"><div class=\"ds-hero-social\"><span class=\"ds-hero-dot\"></span><span class=\"ds-hero-dot\"></span></div><h1 class=\"ds-hero-name\">Manh-Huan Nguyen</h1><p class=\"ds-hero-role\">Full Stack Engineer</p></div></div>",
+      "css": ".ds-hero { display: flex; gap: 30px; align-items: center; padding: 0 15%; min-height: 700px; background: #20262e; background-size: cover; background-position: center; } .ds-hero-photo { width: 150px; height: 150px; border-radius: 50%; background: #444c56; flex-shrink: 0; } .ds-hero-content { text-align: left; color: #ffffff; } .ds-hero-social { display: flex; gap: 10px; margin-bottom: 12px; } .ds-hero-dot { width: 28px; height: 28px; border-radius: 50%; background: #ffffff; opacity: 0.85; } .ds-hero-name { font-family: 'Lato', sans-serif; font-size: 5em; font-weight: 700; color: #ffffff; margin: 0; } .ds-hero-role { font-family: 'Lato', sans-serif; font-size: 1.5em; color: #ffffff; margin: 0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Faithful Port",
+    "overview": "This system is a user-pinned faithful port of Yuji Sato's react-portfolio-template (MIT) into Angular 19. The world is a near-black developer portfolio: deep blue-black ground, white text, one electric violet accent, white cards floating on the darkness, and a single fixed-attachment hero image. Every value here is taken from the shipped code, not from the template's intent — where the build departs from the reference, the departure is a recorded user decision (the contact form became direct links) and the build wins.\n\nThe character is restrained and terminal-adjacent: Lato carries all UI prose at a generous 1.1rem body size, while Courier Prime marks machine-readable strings (tech chips, timeline dates, GitHub handles) the way a code editor marks literals. Depth is real but quiet — Material-elevation card shadows at rest, no gradients, no glass. Motion exists in exactly two places: a one-time 700ms app fade-in and the alternating timeline's scroll reveal, both disabled under prefers-reduced-motion.\n\nTheme is a body-level class swap (light-mode on body, deep-linkable via ?theme=light): every ground, text, and muted token re-points; the accent and the entire white card system stay identical in both modes.",
+    "keyCharacteristics": [
+      "Near-black ground (#0d1116) with white text; light mode swaps the ground to #f8f9fa and text to #0d1116, nothing else",
+      "One accent for both modes (#5000ca) used only as fills, dots, focus rings, selection, and the scrollbar — never as body text or large surfaces",
+      "White cards and white chips with card-ink text (rgb(39, 40, 34)) in both themes",
+      "Lato for all UI text; Courier Prime reserved for chips, dates, and handle strings",
+      "Fixed-attachment hero background (bg-dark.png / bg-light.png), min-height 700px",
+      "Two motion moments only (app fade-in, timeline reveal), both SSR-safe and reduced-motion-safe"
+    ],
+    "rules": [
+      { "name": "The One Violet Rule", "body": "#5000ca is the only accent hue in either theme. It appears as small fills, markers, and interaction states — never as a large resting surface, never as decorative gradient, never as a second accent alongside anything else.", "section": "colors" },
+      { "name": "The Card Stays White Rule", "body": "Cards and chips keep white surfaces and card-ink text in dark and light mode alike. Theme changes touch grounds, text, and muted tones only; the card system is theme-invariant.", "section": "colors" },
+      { "name": "The Mono Is Metadata Rule", "body": "Courier Prime appears only on machine-readable strings — tech-stack chips, date ranges, GitHub/LinkedIn handles. UI prose is always Lato; mono is never used for headings, sentences, or buttons.", "section": "typography" },
+      { "name": "The Shadow At Rest Rule", "body": "Elevation is a property of the surface, not the state: cards carry Card Rest at all times, hover swaps the background to accent instead of lifting. Never add hover shadows or scale-on-hover to cards.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep all themeable values on the CSS custom properties (--bg, --text, --muted, --accent, --accent-text, --card, --card-text, --home-bg) so the light-mode class swap stays a one-place change.",
+      "Do use #5000ca for hover fills, dots, focus-visible rings (2px solid, offset 2px), selection, and the scrollbar — the complete list of its appearances.",
+      "Do keep state transitions at 0.15s ease-in-out (color, background-color, border-color) — the single transition speed the whole site uses.",
+      "Do gate any scroll-reveal hidden state behind a JS-added class (as .vt-reveal does) so SSR prerenders and no-JS visitors see full content.",
+      "Do honor prefers-reduced-motion: reduce wherever motion is added — the global clamp already exists in styles.scss."
+    ],
+    "donts": [
+      "Don't introduce a second accent hue, a gradient, or a colored large surface; the palette is grounds + white + one violet.",
+      "Don't use Courier Prime for headings, sentences, or buttons; mono is for chips, dates, and handle strings only.",
+      "Don't tint cards or chips with the theme; they are white with card-ink text in both modes.",
+      "Don't add fonts beyond Lato and Courier Prime (loaded weights: Lato 300/400/700/900 + italic 400, Courier Prime 400/700).",
+      "Don't add entry animation beyond the two shipped moments (app fade-in 700ms, timeline reveal); never animate on scroll elsewhere.",
+      "Don't give hover fills to non-actionable rows; static contact rows keep their white surface (the .static variant)."
+    ]
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/challenger-nixie.html"
+        ],
+        "createdAt": "2026-11-04T23:29:36.406Z",
+        "reason": "nixie-counter world: the orange digit glow is the tube's literal material per catalog source signals-instruments-nixie-laboratory-counter, not decoration; sanctioned exception by the direction card"
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "src/app/components/home/home.component.html"
+        ],
+        "createdAt": "2026-11-04T23:37:38.680Z",
+        "reason": "Angular [src] property binding is not statically resolvable by the detector; asset verified live at /manh-huan-ng-portfolio/assets/images/profile-photo.jpg (HTTP 200)"
+      },
+      {
+        "rule": "overused-font",
+        "value": "lato",
+        "createdAt": "2026-11-05T11:50:05.110Z",
+        "reason": "pinned visual world: reference template react-portfolio-template (user-pinned) specifies Lato throughout; brief wins over distinctiveness warning"
+      },
+      {
+        "rule": "border-accent-on-rounded",
+        "value": "*",
+        "files": [
+          "src/app/components/timeline/timeline.component.scss"
+        ],
+        "createdAt": "2026-11-05T11:50:05.125Z",
+        "reason": "CSS-triangle card arrows from react-vertical-timeline-component's contentArrowStyle (7px solid), the pinned reference's own mechanism; not accent borders on rounded cards"
+      },
+      {
+        "rule": "bounce-easing",
+        "value": "*",
+        "files": [
+          "src/app/components/timeline/timeline.component.scss"
+        ],
+        "createdAt": "2026-11-05T11:50:05.137Z",
+        "reason": "the pinned reference library's signature bounce-in reveal (react-vertical-timeline-component); faithful motion, not slop"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/challenger-azulejo.html"
+        ],
+        "createdAt": "2026-11-05T11:53:25.098Z",
+        "reason": "spent decision-round sketch; direction superseded by user-pinned reference template on 2026-11-05; archival artifact, not product code"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/challenger-hatch.html"
+        ],
+        "createdAt": "2026-11-05T11:53:25.112Z",
+        "reason": "spent decision-round sketch; direction superseded by user-pinned reference template on 2026-11-05; archival artifact, not product code"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/pick-encyclopedie.html"
+        ],
+        "createdAt": "2026-11-05T11:53:25.125Z",
+        "reason": "spent decision-round sketch; direction superseded by user-pinned reference template on 2026-11-05; archival artifact, not product code"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/pick-fiche-technique.html"
+        ],
+        "createdAt": "2026-11-05T11:53:25.137Z",
+        "reason": "spent decision-round sketch; direction superseded by user-pinned reference template on 2026-11-05; archival artifact, not product code"
+      },
+      {
+        "rule": "wide-tracking",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/assigned-builders-plate.html"
+        ],
+        "createdAt": "2026-11-05T11:53:25.148Z",
+        "reason": "spent decision-round sketch; direction superseded by user-pinned reference template on 2026-11-05; archival artifact, not product code"
+      },
+      {
+        "rule": "wide-tracking",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/challenger-azulejo.html"
+        ],
+        "createdAt": "2026-11-05T11:53:25.160Z",
+        "reason": "spent decision-round sketch; direction superseded by user-pinned reference template on 2026-11-05; archival artifact, not product code"
+      },
+      {
+        "rule": "wide-tracking",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/challenger-hatch.html"
+        ],
+        "createdAt": "2026-11-05T11:53:25.173Z",
+        "reason": "spent decision-round sketch; direction superseded by user-pinned reference template on 2026-11-05; archival artifact, not product code"
+      },
+      {
+        "rule": "wide-tracking",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/pick-fiche-technique.html"
+        ],
+        "createdAt": "2026-11-05T11:53:25.184Z",
+        "reason": "spent decision-round sketch; direction superseded by user-pinned reference template on 2026-11-05; archival artifact, not product code"
+      },
+      {
+        "rule": "italic-serif-display",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/pick-encyclopedie.html"
+        ],
+        "createdAt": "2026-11-05T11:53:25.195Z",
+        "reason": "spent decision-round sketch; direction superseded by user-pinned reference template on 2026-11-05; archival artifact, not product code"
+      },
+      {
+        "rule": "em-dash-overuse",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/challenger-cyclorama.html"
+        ],
+        "createdAt": "2026-11-05T11:53:25.206Z",
+        "reason": "spent decision-round sketch; direction superseded by user-pinned reference template on 2026-11-05; archival artifact, not product code"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/challenger-nixie.html"
+        ],
+        "createdAt": "2026-11-05T11:53:25.218Z",
+        "reason": "spent decision-round sketch; direction superseded by user-pinned reference template on 2026-11-05; archival artifact, not product code"
+      },
+      {
+        "rule": "repeating-stripes-gradient",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/assigned-builders-plate.html"
+        ],
+        "createdAt": "2026-11-05T11:53:25.229Z",
+        "reason": "spent decision-round sketch; direction superseded by user-pinned reference template on 2026-11-05; archival artifact, not product code"
+      },
+      {
+        "rule": "repeating-stripes-gradient",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/challenger-azulejo.html"
+        ],
+        "createdAt": "2026-11-05T11:53:25.240Z",
+        "reason": "spent decision-round sketch; direction superseded by user-pinned reference template on 2026-11-05; archival artifact, not product code"
+      },
+      {
+        "rule": "repeating-stripes-gradient",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/challenger-nixie.html"
+        ],
+        "createdAt": "2026-11-05T11:53:25.251Z",
+        "reason": "spent decision-round sketch; direction superseded by user-pinned reference template on 2026-11-05; archival artifact, not product code"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "georgia",
+        "files": [
+          ".impeccable/mocks/decision/assigned-builders-plate.html"
+        ],
+        "createdAt": "2026-11-05T12:31:53.341Z",
+        "reason": "spent decision-round sketch placeholder face; direction superseded by user-pinned reference (2026-11-05); shipped product uses only the DESIGN.md type system (Lato + Courier Prime)"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "georgia",
+        "files": [
+          ".impeccable/mocks/decision/pick-encyclopedie.html"
+        ],
+        "createdAt": "2026-11-05T12:31:53.356Z",
+        "reason": "spent decision-round sketch placeholder face; direction superseded by user-pinned reference (2026-11-05); shipped product uses only the DESIGN.md type system (Lato + Courier Prime)"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "georgia",
+        "files": [
+          ".impeccable/mocks/decision/challenger-azulejo.html"
+        ],
+        "createdAt": "2026-11-05T12:31:53.369Z",
+        "reason": "spent decision-round sketch placeholder face; direction superseded by user-pinned reference (2026-11-05); shipped product uses only the DESIGN.md type system (Lato + Courier Prime)"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "georgia",
+        "files": [
+          ".impeccable/mocks/decision/challenger-hatch.html"
+        ],
+        "createdAt": "2026-11-05T12:31:53.382Z",
+        "reason": "spent decision-round sketch placeholder face; direction superseded by user-pinned reference (2026-11-05); shipped product uses only the DESIGN.md type system (Lato + Courier Prime)"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "arial narrow",
+        "files": [
+          ".impeccable/mocks/decision/challenger-hatch.html"
+        ],
+        "createdAt": "2026-11-05T12:31:53.395Z",
+        "reason": "spent decision-round sketch placeholder face; direction superseded by user-pinned reference (2026-11-05); shipped product uses only the DESIGN.md type system (Lato + Courier Prime)"
+      }
+    ]
+  }
+}
